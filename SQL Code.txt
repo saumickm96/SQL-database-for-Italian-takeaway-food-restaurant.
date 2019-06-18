@@ -1,0 +1,72 @@
+CREATE TABLE dine_in_table (  
+id number  NOT NULL,  
+dine_in_table_area_id number  NOT NULL, 
+max_capacity number  NOT NULL, 
+serving_staff_id number  NOT NULL, 
+dine_in_table_status_id number  NOT NULL,
+CONSTRAINT dine_in_table_pk PRIMARY KEY (id)
+);
+CREATE TABLE dine_in_table_area (
+id number  NOT NULL,    
+area_desc varchar2(20)  NOT NULL,
+is_smoking_allowed char(1)  NOT NULL,
+is_liquor_served char(1)  NOT NULL,
+CONSTRAINT dine_in_table_area_pk PRIMARY KEY (id)
+);
+CREATE TABLE dine_in_table_siting (
+id number  NOT NULL,
+dine_in_time timestamp  NOT NULL,
+dine_out_time timestamp  NOT NULL,
+num_person_sitting number  NOT NULL,
+dine_in_table_id number  NOT NULL,
+CONSTRAINT dine_in_table_siting_pk PRIMARY KEY (id)
+);
+
+CREATE TABLE dine_in_table_status ( 
+id number  NOT NULL,
+status varchar2(20)  NOT NULL,
+CONSTRAINT dine_in_table_status_pk PRIMARY KEY (id)
+);	
+CREATE TABLE kod (
+id number  NOT NULL,
+kot_menu_item_id number  NOT NULL,
+staff_id number  NOT NULL,
+kod_status_id number  NOT NULL,
+CONSTRAINT kod_pk PRIMARY KEY (id)
+);
+CREATE TABLE kod_status (    
+id number  NOT NULL,   
+status varchar2(20)  NOT NULL,
+CONSTRAINT kod_status_pk PRIMARY KEY (id)
+);
+CREATE TABLE kot (   
+id number  NOT NULL,   
+order_channel_id number  NOT NULL,
+staff_id number  NOT NULL,   
+dine_in_table_stting_id number  NOT NULL,  
+order_in_time timestamp  NOT NULL,
+order_out_time timestamp  NOT NULL,
+kot_status_id number  NOT NULL,
+CONSTRAINT kot_pk PRIMARY KEY (id)
+
+);
+CREATE TABLE kot_menu_item (    
+id number  NOT NULL,   
+kot_id number  NOT NULL, 
+menu_item_id number  NOT NULL,   
+quantity number  NOT NULL,   
+CONSTRAINT kot_menu_item_pk PRIMARY KEY (id)
+);
+CREATE TABLE kot_status (
+id number  NOT NULL,
+status varchar2(20)  NOT NULL,
+CONSTRAINT kot_status_pk PRIMARY KEY (id)
+);
+CREATE TABLE menu_item (    
+id number  NOT NULL,   
+item_name varchar2(100)  NOT NULL,    
+item_category_id number  NOT NULL,    
+item_desc varchar2(1000)  NOT NULL,    
+cost number  NOT NULL,
+CONSTRAINT menu_item_pk PRIMARY KEY (id)
+);
