@@ -1,5 +1,4 @@
 # SQL-database-for-Italian-takeaway-food-restaurant.
-SQL database made in Oracle database.
 
 We will be building a SQL database for our Italian takeaway food restaurant.  
 Just like most Italian takeaways we will be having a menu, menu item category, dine in tables, order channel etc.
@@ -21,4 +20,6 @@ to have a person inspect the condition of the food once in a while as serving or
 We can’t ignore the privacy issue that comes with using a database for the company, for example if the information 
 of a costumer is stored on to the system we have to ensure that no hacker can possible get his hands on them, and in 
 the rare scenario they do we have to immediately inform the costumer on their leaked information. 
+
+Please check the ERD table and the Relational Table.
 
